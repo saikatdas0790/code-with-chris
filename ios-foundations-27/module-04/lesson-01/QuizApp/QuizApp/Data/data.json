@@ -1,0 +1,113 @@
+[
+  {
+    "id": "planets",
+    "title": "Planets",
+    "imageName": "planets-quiz",
+    "questions": [
+      {
+        "type": "multipleChoice",
+        "text": "Which planet is the largest in our solar system?",
+        "answers": ["Jupiter", "Mars", "Earth", "Saturn"],
+        "correctAnswer": "Jupiter"
+      },
+      {
+        "type": "multipleChoice",
+        "text": "Which planet is closest to the Sun?",
+        "answers": ["Venus", "Mercury", "Earth", "Pluto"],
+        "correctAnswer": "Mercury"
+      },
+      {
+        "type": "multipleChoice",
+        "text": "Which planet is known as the Red Planet?",
+        "answers": ["Jupiter", "Venus", "Mars", "Neptune"],
+        "correctAnswer": "Mars"
+      },
+      {
+        "type": "trueFalse",
+        "text": "The Sun is a star.",
+        "answers": ["True", "False"],
+        "correctAnswer": "True"
+      },
+      {
+        "type": "textEntry",
+        "text": "What is the largest planet in our solar system?",
+        "answers": [],
+        "correctAnswer": "Jupiter"
+      }
+    ]
+  },
+  {
+    "id": "animals",
+    "title": "Animals",
+    "imageName": "animals-quiz",
+    "questions": [
+      {
+        "type": "multipleChoice",
+        "text": "Which animal is the largest mammal in the world?",
+        "answers": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+        "correctAnswer": "Blue Whale"
+      },
+      {
+        "type": "multipleChoice",
+        "text": "Which animal is known for changing its color to blend into its surroundings?",
+        "answers": ["Chameleon", "Tiger", "Penguin", "Dolphin"],
+        "correctAnswer": "Chameleon"
+      },
+      {
+        "type": "multipleChoice",
+        "text": "Which of these animals can fly?",
+        "answers": ["Ostrich", "Penguin", "Eagle", "Emu"],
+        "correctAnswer": "Eagle"
+      },
+      {
+        "type": "trueFalse",
+        "text": "Penguins can fly.",
+        "answers": ["True", "False"],
+        "correctAnswer": "False"
+      },
+      {
+        "type": "textEntry",
+        "text": "What is the tallest animal?",
+        "answers": [],
+        "correctAnswer": "Giraffe"
+      }
+    ]
+  },
+  {
+    "id": "geography",
+    "title": "Geography",
+    "imageName": "geography-quiz",
+    "questions": [
+      {
+        "type": "multipleChoice",
+        "text": "What is the largest ocean on Earth?",
+        "answers": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+        "correctAnswer": "Pacific Ocean"
+      },
+      {
+        "type": "multipleChoice",
+        "text": "Which country is home to the city of Paris?",
+        "answers": ["Italy", "France", "Spain", "Germany"],
+        "correctAnswer": "France"
+      },
+      {
+        "type": "multipleChoice",
+        "text": "Which continent is Egypt located in?",
+        "answers": ["Asia", "Europe", "Africa", "South America"],
+        "correctAnswer": "Africa"
+      },
+      {
+        "type": "trueFalse",
+        "text": "The Nile River flows through Egypt.",
+        "answers": ["True", "False"],
+        "correctAnswer": "True"
+      },
+      {
+        "type": "textEntry",
+        "text": "What is the capital city of Japan?",
+        "answers": [],
+        "correctAnswer": "Tokyo"
+      }
+    ]
+  }
+]
