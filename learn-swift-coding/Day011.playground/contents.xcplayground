@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='7.0' target-platform='ios' swift-version='6' display-mode='raw' buildActiveScheme='true' executeOnSourceChanges='true' importAppTypes='true'>
+    <pages>
+        <page name='Challenge_1'/>
+        <page name='Solution_1'/>
+        <page name='Challenge_2'/>
+        <page name='Solution_2'/>
+        <page name='Challenge_3'/>
+        <page name='Solution_3'/>
+    </pages>
+</playground>
