@@ -10,6 +10,12 @@
       "Base",
     ],
   },
+  "packages": [
+    {
+      "kind": "local",
+      "path": ".",
+    },
+  ],
   "files": [
     { "kind": "folder", "path": "quiz", "target-membership": [ "quiz" ] },
     {
@@ -30,6 +36,13 @@
         "compile-sources",
         "frameworks",
         "resources",
+      ],
+      "package-product-members": [
+        {
+          "package": ".",
+          "product-name": "QuizFeature",
+          "build-phase": { "build-phase": "frameworks" },
+        },
       ],
       "build-settings": {
         "CODE_SIGN_STYLE": "Automatic",
