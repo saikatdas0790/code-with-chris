@@ -1,59 +1,55 @@
-struct QuizMachine {
-    enum MachineState {
-        case Loaded(quizQuestion: String, quizAnswer: QuizAnswer)
-        case Submitted
+struct QuizListMachine {
+    var quizMachines: [QuizMachine]
+
+    init(quizList: [QuizMachine.Quiz]) {
+        quizMachines = quizList.map(QuizMachine.init(quiz:))
     }
 
-    struct MachineContext {
-
-    }
-
-    enum MachineEvent {
-        case AnswerSubmitted(answerChosen: String)
-    }
-
-    struct QuizAnswer {
-        public struct Options {
-            let option1: String
-            let option2: String
-            let option3: String
-            let option4: String
+    struct QuizMachine: Identifiable {
+        struct Quiz {
+            let id: String
+            let title: String
+            let imageName: String
+            let questions: [Question]
         }
 
-        let options: Options
-        let correctAnswer: String
-    }
+        struct Question {
+            let questionText: String
+            let answers: [String]
+            let correctAnswer: String
+        }
 
-    var currentState: MachineState
-    var currentContext: MachineContext
+        enum State: Equatable {
+            case answering(questionIndex: Int)
+            case finished
+        }
 
-    init(
-        question: String,
-        option1: String,
-        option2: String,
-        option3: String,
-        option4: String,
-        correctAnswer: String
-    ) {
-        self.currentState = MachineState.Loaded(
-            quizQuestion: question,
-            quizAnswer: QuizAnswer(
-                options: QuizAnswer.Options(
-                    option1: option1,
-                    option2: option2,
-                    option3: option3,
-                    option4: option4
-                ),
-                correctAnswer: correctAnswer
-            )
-        )
-        self.currentContext = MachineContext()
-    }
+        enum Event {
+            case answerSubmitted(questionIndex: Int, answer: String)
+        }
 
-    func transition(eventReceived: MachineEvent) {
-        switch eventReceived {
-        case .AnswerSubmitted(let answerChosen):
-            print(answerChosen)
+        let quiz: Quiz
+        private(set) var state: State
+        var id: String { quiz.id }
+
+        init(quiz: Quiz) {
+            self.quiz = quiz
+            state = quiz.questions.isEmpty ? .finished : .answering(questionIndex: 0)
+        }
+
+        func transition(_ event: Event) -> Self {
+            var nextMachine = self
+            switch (state, event) {
+            case let (.answering(questionIndex), .answerSubmitted(submittedIndex, answer))
+                where submittedIndex == questionIndex && quiz.questions[questionIndex].answers.contains(answer):
+                let nextQuestionIndex = questionIndex + 1
+                nextMachine.state = quiz.questions.indices.contains(nextQuestionIndex)
+                    ? .answering(questionIndex: nextQuestionIndex)
+                    : .finished
+            default:
+                break
+            }
+            return nextMachine
         }
     }
 }
